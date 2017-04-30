@@ -1,0 +1,8 @@
+npm-debug.log
+.DS_Store
+
+app/**/*.js
+app/**/*.map
+node_modules/
+platforms/
+.tmp_backup

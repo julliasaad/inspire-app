@@ -1,0 +1,243 @@
+/* generic */
+Label,
+TextField,
+button {
+  font-family: 'Montserrat', sans-serif;
+  color: #666;
+}
+
+.touch-padding {
+  padding: 10;
+}
+
+ActionBar {
+  background-color: #F5F5F5;
+  text-align: center;
+  font-weight: bold;
+  color: #999;
+  font-size: 14;
+}
+
+StackLayout {
+  color: #666;
+}
+
+ActivityIndicator {
+  position: absolute;
+  margin-top: 35%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.margin-bottom {
+  margin-bottom: -5;
+}
+
+.ios .margin-bottom {
+  margin-bottom: 0;
+}
+
+.login {
+  background-color: #F5F5F5;
+}
+
+.dashboard,
+.list-page {
+  background-color: #FFF;
+}
+
+.icon {
+  font-family: 'FontAwesome', fontawesome-webfont;
+}
+
+.margin-left {
+  margin-left: 10;
+}
+
+.margin-right {
+  margin-right: 10;
+}
+
+.page-title {
+  font-size: 16;
+  font-weight: bold;
+  text-align: center;
+  padding: 10 0;
+  background-color: #f0f0f0;
+  color: #999;
+}
+
+.title {
+  font-size: 24;
+  margin-top: 5;
+  margin-bottom: 5;
+}
+
+.sub-title {
+  font-size: 18;
+}
+
+.destaque {
+  font-weight: bold;
+}
+
+.number {
+  font-family: 'Monospace';
+}
+
+/* side drawer */
+
+.drawer-content {
+  background-color: #F0F0F0;
+  padding-top: 10;
+}
+
+.drawer-link {
+  color:#999;
+  font-weight: bold;
+  font-size: 14;
+}
+
+.drawer-border {
+  background-color: #D94143;
+  width: 1%;
+  height: 40;
+  margin: 5 20;
+}
+
+.logout {
+  padding: 10;
+  width: 40%;
+  text-align: center;
+  margin-bottom: 5;
+  margin-left: 5;
+  background-color: #ddd;
+}
+
+/* login */
+
+.login image {
+  width: 70%;
+}
+
+.login TextField {
+  margin: 10 auto;
+  padding: 10 20;
+  width: 90%;
+  text-align: left;
+  background-color: #E6E6E6;
+}
+
+.login button {
+  margin: auto 0 50 0;
+  padding: 10 20;
+  width: 90%;
+  height: 60;
+  background-color: #666;
+  color: #fff;
+}
+
+.login Label {
+  padding: 15 0;
+  margin: auto auto;
+  text-align: center;
+}
+
+/* card */
+
+.card {
+  background-color: #F5F5F5;
+  margin-top: 5;
+}
+
+.card-border {
+  background-color: #D94143;
+  width: 1%;
+  height: 80;
+  margin-right: 10;
+}
+
+.card .touch-padding-bottom {
+  padding: 8 0;
+}
+
+.card-count {
+  width: auto;
+  font-size: 30;
+  font-family: 'Monospace';
+  margin-right: 10;
+  font-weight: bold;
+}
+
+.card-icon {
+  font-size: 50;
+  margin-right: 10;
+  margin-left: 10;
+  color: #bbb;
+}
+
+.card-prox-vencimentos .card-border-auto {
+  background-color: #D94143;
+  width: 1%;
+  margin-right: 10;
+}
+.card-prox-vencimentos .card-content-down{
+  margin-top: -45;
+}
+
+.card-prox-vencimentos .card-icon {
+  font-size: 30;
+}
+
+.small-label {
+  font-size: 13;
+}
+
+.card-content .small-label {
+  font-size: 16;
+}
+
+.card-content .big-label {
+  font-size: 22;
+}
+
+/* group cards */
+.heading {
+  padding: 12 0 7 0;
+}
+
+.heading-title {
+  text-align: center;
+}
+
+.heading-label-container {
+  font-size: 15;
+  font-weight: bold;
+  color: #666;
+  margin: 5 15 0 10;
+}
+
+/* detalhes do produto */
+
+.detalhes-produto Label {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card-border-details {
+  background-color: #D94143;
+  width: 1%;
+  height: 50;
+  margin-right: 10;
+}
+
+/* divider */
+
+.divider {
+  background-color: #e8e8e8;
+  width: 100%;
+  height: 1;
+  margin-top: 10;
+  margin-bottom: 10;
+}
