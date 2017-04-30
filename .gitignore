@@ -6,3 +6,9 @@ app/**/*.map
 node_modules/
 platforms/
 .tmp_backup
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
