@@ -1,0 +1,25 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+"vsicons.presets.angular": false,
+  "jshint.enable": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    ".tmp_backup": true,
+    "**/*.js": { "when": "$(basename).ts" },
+    "**/*.map": { "when": "$(basename).map" }
+  },
+  "typescriptHero.resolver.ignorePatterns": [
+    "typescript",
+    "tslint",
+    "node_modules/typings",
+    "node_modules/typings-core",
+    "build",
+    "out",
+    "dist",
+    "platforms"
+  ]
+}

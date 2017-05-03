@@ -1,5 +1,6 @@
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
+import { LoginPage } from './modules/home/login/login';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NativeScriptHttpModule } from 'nativescript-angular';
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
@@ -19,6 +20,7 @@ enableProdMode();
   exports: [NativeScriptRouterModule],
   declarations: [
     AppComponent,
+    LoginPage
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [
