@@ -1,0 +1,47 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
+    <StackLayout orientation="horizontal" android:horizontalAlignment="center">
+        <Label text="Codecademy" horizontalAlignment="center"></Label>
+    </StackLayout>
+</ActionBar>
+<GridLayout class="cursos-detalhe-page" columns="*" rows="auto, auto, auto, auto">
+    <StackLayout col="1" row="0" orientation="vertical">
+        <Image src="https://media.licdn.com/mpr/mpr/shrinknp_674_240/AAEAAQAAAAAAAAT4AAAAJDhlZTA2MDYwLWE1YzctNDA4MS04NGQ3LWE5YzhlYTdhZThjYg.png"></Image>        
+        <Label text="Codecademy" class="title-group" horizontalAlignment="center" marginTop="-20"></Label>        
+    </StackLayout>
+    <StackLayout col="1" row="1" orientation="vertical" marginLeft="10" marginBottom="15" marginRight="10">
+        <Label text="Descrição" class="title"></Label>
+        <Label text="Codecademy is an education company. But not one in the way you might think. We're committed to building the best learning experience inside and out, making Codecademy the best place for our team to learn, teach, and create the online learning experience of the future." [textWrap]="true"></Label>        
+    </StackLayout>
+    <StackLayout col="1" row="2" orientation="vertical" marginLeft="10">
+        <Label text="Cursos oferecidos" class="title"></Label>
+
+        <StackLayout class="card" orientation="horizontal">
+            <StackLayout class="card-border"></StackLayout>
+            <Label class="card-title" text="Learn HTML" (tap)="onCursoTap()" verticalAlignment="center" [textWrap]="true"></Label>
+        </StackLayout>
+
+        <StackLayout class="card" orientation="horizontal">
+            <StackLayout class="card-border"></StackLayout>
+            <Label class="card-title" text="Introduction To JavaScript" (tap)="onCursoTap()" verticalAlignment="center" [textWrap]="true"></Label>
+        </StackLayout> 
+
+        <StackLayout class="card" orientation="horizontal">
+            <StackLayout class="card-border"></StackLayout>
+            <Label class="card-title" text="Learn Python" (tap)="onCursoTap()" verticalAlignment="center" [textWrap]="true"></Label>
+        </StackLayout>
+    </StackLayout>
+    <!--<ListView [items]="data.eventos" col="0" row="0">
+        <ng-template let-item="item">
+            <StackLayout>
+                <GridLayout class="list-item" columns="auto, *" rows="auto">
+                    <Image col="0" row="0" marginRight="10" marginLeft="10" src="https://pbs.twimg.com/profile_images/826548428385681408/13n_r40Y_400x400.jpg" height="50"></Image>
+                    <StackLayout col="1" row="0" orientation="vertical">
+                        <Label class="group-title" text="{{ item.titulo }}"></Label>
+                        <Label class="group-description" text="{{ item.descricao }}" [textWrap]="true"></Label>            
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+        </ng-template>
+    </ListView>-->
+</GridLayout>

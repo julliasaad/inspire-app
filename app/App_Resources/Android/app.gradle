@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "" 
+    applicationId = "br.com.inspire.app" 
     
     //override supported platforms
     // ndk {
@@ -19,5 +19,14 @@ android {
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  
-  }  
+  } 
+  //splits {
+    //abi {
+      //enable true //enables the ABIs split mechanism
+      //reset() //reset the list of ABIs to be included to an empty string
+      //include 'arm64-v8a', 'armeabi-v7a', 'x86' all options
+      //include 'armeabi-v7l'
+      //universalApk true
+    //}
+  //} 
 } 

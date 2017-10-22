@@ -1,0 +1,20 @@
+<ActionBar actionBarHidden="true">
+</ActionBar>
+<GridLayout class="login-page" columns="*" rows="*, auto, auto, auto">
+    <Image col="0" row="0" src="res://logo" id="logo" [ngClass]="'logo-animation'"></Image>
+    <StackLayout col="0" row="1" [ngClass]="{'opacity-animation':true}">
+        <StackLayout>
+            <TextField #loginInput id="emailInput" [(ngModel)]="email" hint="E-mail"></TextField>
+            <TextField #passwordInput id="passwordInput" [(ngModel)]="password" hint="Senha" secure="true" returnKeyType="done" (returnPress)="onLoginTap()"></TextField>
+            <Button class="button-access" text="ACESSAR" (tap)="onLoginTap()"></Button>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout col="0" row="2">
+        <Label text="Não tem uma conta?" horizontalAlignment="center"></Label>
+        <Label class="label-sing-up" text="Cadastrar-se" (tap)="onCadastrarTap()" horizontalAlignment="center"></Label>
+    </StackLayout>
+    <GridLayout col="0" row="3" columns="auto, auto" rows="auto" horizontalAlignment="center">
+        <Label col="0" row="0" class="icon button-social" [text]="'\uf082'" (tap)="onFacebookTap()" marginRight="10" horizontalAlignment="right"></Label>
+        <Label col="1" row="0" class="icon button-social" [text]="'\uf0d4'" (tap)="onGoogleTap()" marginLeft="10" horizontalAlignment="left"></Label>
+    </GridLayout>
+</GridLayout>

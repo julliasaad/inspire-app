@@ -1,0 +1,17 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
+    <StackLayout orientation="horizontal" android:horizontalAlignment="center">
+        <Label text="Cadastro" class="action-label" horizontalAlignment="center"></Label>
+    </StackLayout>
+</ActionBar>
+<GridLayout class="cadastrar-page" columns="*" rows="auto, auto, *" margin="15">
+    <Label col="0" row="0" text="Queremos saber mais sobre você!" fontSize="22" marginTop="20" horizontalAlignment="center" textWrap="true"></Label>
+    <Label col="0" row="1" text="Faremos algumas perguntas :)" horizontalAlignment="center"></Label>
+    <StackLayout col="0" row="2" horizontalAlignment="center" marginTop="20">
+        <Label text="Você já trabalhou ou possui alguma experiência na área de TI?" textWrap="true"></Label>
+        <Switch checked="false" [(ngModel)]="experience" hint="sim"></Switch>
+        <Label text="Você ainda tem dúvida se é essa carreira que você realmente deseja seguir?" textWrap="true"></Label>
+        <Switch checked="false" [(ngModel)]="doubt"></Switch>
+        <Button text="Enviar" (tap)="onEnviarTap()" marginTop="20"></Button>
+    </StackLayout>
+</GridLayout>

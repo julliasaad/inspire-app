@@ -1,0 +1,25 @@
+<ActionBar>
+  <Image col="0" row="0" src="res://logo" id="logo" height="30" horizontalAlignment="center"></Image>
+  <ActionItem (tap)="onMeuPerfilTap()" ios.position="right" text="Meu perfil" android.position="popup"></ActionItem>
+  <ActionItem (tap)="onLogoutTap()" ios.position="right" text="Sair" android.position="popup"></ActionItem>
+</ActionBar>
+<GridLayout class="dashboard" columns="*, *" rows="*, *, *">
+  <StackLayout class="square1" col="0" row="0" (tap)="onEventosTap()">
+    <Label text="Eventos" marginTop="40%" horizontalAlignment="center"></Label>
+  </StackLayout>
+  <StackLayout class="square2" col="0" row="1" (tap)="onVideosTap()">
+    <Label text="Vídeos" marginTop="40%" horizontalAlignment="center"></Label>
+  </StackLayout>
+  <StackLayout class="square3" col="0" row="2" (tap)="onInspirersTap()">
+    <Label text="Inspirers" marginTop="40%" horizontalAlignment="center"></Label>
+  </StackLayout>
+  <StackLayout class="square4" col="1" row="0" (tap)="onInspireMeTap()"> 
+    <Label text="Inspire me!" marginTop="40%" horizontalAlignment="center"></Label>
+  </StackLayout>
+  <StackLayout class="square5" col="1" row="1" (tap)="onCursosTap()">
+    <Label text="Cursos" marginTop="40%" horizontalAlignment="center"></Label>
+  </StackLayout>
+  <StackLayout class="square6" col="1" row="2"(tap)="onInspiredsTap()">
+    <Label text="Inspireds" marginTop="40%" horizontalAlignment="center"></Label>
+  </StackLayout>
+</GridLayout>

@@ -1,0 +1,24 @@
+.inspireds-page Image {
+    border-radius: 100%;
+}
+
+.inspireds-page .group-title {
+    font-size: 16;
+    text-align: left;
+}
+
+.inspireds-page .group-description {
+    font-size: 14;
+    text-align: left;
+}
+
+.inspireds-page .saber-mais {
+    /*width: 90%;
+    height: 40;*/
+    background-color: white;
+    color: #e10073;
+    /*margin: 10 0 50 0;*/
+    border: 1 solid #e10073;
+    border-radius: 5;
+    font-family: 'Montserrat-Light', sans-serif;
+}

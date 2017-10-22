@@ -1,0 +1,9 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
+    <StackLayout orientation="horizontal" android:horizontalAlignment="center">
+        <Label text="Cursos" horizontalAlignment="center"></Label>
+    </StackLayout>
+</ActionBar>
+<GridLayout class="cursos-detalhe-page" columns="*" rows="*">
+    <WebView #myWebView [src]="webViewSrc"></WebView>
+</GridLayout>

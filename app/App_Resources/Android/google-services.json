@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "899531495942",
+    "firebase_url": "https://inspireapp-84af9.firebaseio.com",
+    "project_id": "inspireapp-84af9",
+    "storage_bucket": "inspireapp-84af9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899531495942:android:8089452e67350127",
+        "android_client_info": {
+          "package_name": "br.com.inspire.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899531495942-gl8grod2dj1gs57ifp10clal64oi02i2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3DFquPB5EC_L1XtTxJpobeUgDBMNpIvo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,31 @@
+.cadastrar-page {
+    background-color: #F5F5F5;
+}
+
+.cadastrar-page TextField {
+    margin: 10 auto;
+    padding: 10 20;
+    width: 90%;
+    text-align: left;
+    background-color: #ffe0f0;
+}
+
+/*.cadastrar-page .button-access {
+    width: 90%;
+    height: 40;
+    color: #e10073;
+    margin: 10 0 50 0;
+    border-width: 1;
+    border-color: #e10073;
+    border-radius: 5;
+}*/
+
+.cadastrar-page Label {
+    margin: auto auto 20 auto;
+    text-align: center;
+}
+
+.cadastrar-page .button-social {
+    font-size: 30;
+    color: #e10073;
+}

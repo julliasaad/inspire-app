@@ -1,0 +1,30 @@
+.cursos-detalhe-page .title-group {
+    background-color: #e278ae;
+    padding: 10 15;
+    font-size: 16;
+    color: white;
+}
+
+.cursos-detalhe-page .title {
+    font-size: 16;
+}
+
+.cursos-detalhe-page .divider {
+    background-color: grey;
+    height: 2;
+}
+
+.cursos-detalhe-page .card {
+    background-color: #F5F5F5;
+    margin-top: 5;
+}
+.cursos-detalhe-page .card .card-border {
+    background-color: #e80076;
+    width: 1%;
+    height: 30;
+    margin-right: 10;
+}
+
+.cursos-detalhe-page .card .card-title {
+    font-size: 16;
+}

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Inspire</string>
+    <string name="title_activity_kimera">Inspire</string>
 
     <!-- Application theme -->
     <style name="AppTheme" parent="AppThemeBase">

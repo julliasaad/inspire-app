@@ -1,0 +1,27 @@
+/*.square:pressed {
+  background-color:#FED700;
+}*/
+
+.square1 {
+    background-color: #d3006b;
+}
+.square2 {
+    background-color: #e80076;
+}
+.square3 {
+    background-color: #830043;
+}
+.square4 {
+    background-color: #e72e8c;
+}
+.square5 {
+    background-color: #aa0057;
+}
+.square6 {
+    background-color: #db1479;
+}
+
+Label {
+    color: white;
+    font-size: 20;
+}

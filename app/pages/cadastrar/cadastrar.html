@@ -1,0 +1,24 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
+    <StackLayout orientation="horizontal" android:horizontalAlignment="center">
+        <Label text="Cadastro" class="action-label" horizontalAlignment="center"></Label>
+    </StackLayout>
+</ActionBar>
+<GridLayout class="cadastrar-page" columns="*" rows="auto, *, auto, auto, auto">
+    <Label col="0" row="0" text="Vem com a gente!" fontSize="22" marginTop="20" verticalAlignment="center"></Label>
+    <Image col="0" row="1" src="res://logo"></Image>
+    <StackLayout col="0" row="2">
+        <StackLayout>
+            <TextField id="nameInput" [(ngModel)]="user.name" hint="Nome e sobrenome"></TextField>
+            <!--<TextField id="userNameInput" [(ngModel)]="username" hint="Nome de usuária"></TextField>-->
+            <TextField id="emailInput" [(ngModel)]="user.email" hint="Email"></TextField>
+            <TextField id="passwordInput" [(ngModel)]="user.password" hint="Senha" secure="true" returnKeyType="done"></TextField>
+            <Button text="Cadastrar" (tap)="onCadastrarTap()"></Button>
+        </StackLayout>
+    </StackLayout>
+    <Label col="0" row="3" text="Cadastrar-se com redes sociais" horizontalAlignment="center"></Label>
+    <GridLayout col="0" row="4" columns="auto, auto" rows="auto" horizontalAlignment="center">
+        <Label col="0" row="0" class="icon button-social" [text]="'\uf082'" (tap)="onFacebookTap()" marginRight="10" horizontalAlignment="right"></Label>
+        <Label col="1" row="0" class="icon button-social" [text]="'\uf0d4'" (tap)="onGoogleTap()" marginLeft="10" horizontalAlignment="left"></Label>
+    </GridLayout>
+</GridLayout>

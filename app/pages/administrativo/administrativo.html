@@ -1,0 +1,16 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
+    <StackLayout orientation="horizontal" android:horizontalAlignment="center">
+        <Label text="Meu perfil" class="action-label" horizontalAlignment="center"></Label>
+    </StackLayout>
+</ActionBar>
+<GridLayout class="administrativo-page" columns="*" rows="auto, auto, auto, auto, auto">
+    <Image borderRadius="100%" class="profile-image" col="0" row="0" marginRight="10" marginLeft="10" src="https://pbs.twimg.com/profile_images/826548428385681408/13n_r40Y_400x400.jpg" height="100" marginTop="10"></Image>
+    <Label col="0" row="1" text="Inspirer" fontWeight="bold" fontSize="22" marginTop="10" horizontalAlignment="center"></Label>    
+    <Label col="0" row="2" text="Jullia Saad" fontSize="22" marginTop="10" horizontalAlignment="center"></Label>
+    <StackLayout col="0" row="3" horizontalAlignment="center">
+        <Label text="Usuária: julliasaad"></Label>
+        <Label text="Email: julliasaad01@gmail.com"></Label>
+    </StackLayout>
+    <Button col="0" row="4" text="Enviar perfil" (tap)="onEnviarPerfil()"></Button>
+</GridLayout>

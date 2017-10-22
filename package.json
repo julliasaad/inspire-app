@@ -1,41 +1,47 @@
 {
-  "description": "Inspire - Aplicativo",
+  "description": "Inspire",
   "license": "SEE LICENSE IN <your-license-filename>",
-  "readme": "",
-  "repository": "<https://github.com/julliasaad/inspire-app.git>",
+  "readme": "Aplicativo",
+  "repository": "-",
   "nativescript": {
-    "id": "br.com.inspire",
+    "id": "br.com.inspire.app",
     "tns-ios": {
-      "version": "2.5.0"
+      "version": "3.0.1"
     },
     "tns-android": {
-      "version": "2.5.0"
+      "version": "3.1.1"
     }
   },
   "dependencies": {
-    "@angular/common": "2.4.3",
-    "@angular/compiler": "2.4.3",
-    "@angular/core": "2.4.3",
-    "@angular/forms": "2.4.3",
-    "@angular/http": "2.4.3",
-    "@angular/platform-browser": "2.4.3",
-    "@angular/platform-browser-dynamic": "2.4.3",
-    "@angular/router": "3.4.3",
-    "nativescript-angular": "1.4.0",
-    "nativescript-angular-snapshot": "1.4.0-5.5.372.32-1",
-    "nativescript-appversion": "^1.3.3",
-    "nativescript-theme-core": "^1.0.2",
+    "@angular/animations": "4.1.1",
+    "@angular/common": "4.1.1",
+    "@angular/compiler": "4.1.1",
+    "@angular/core": "4.1.1",
+    "@angular/forms": "4.1.1",
+    "@angular/http": "4.1.1",
+    "@angular/platform-browser": "4.1.1",
+    "@angular/platform-browser-dynamic": "4.1.1",
+    "@angular/router": "4.1.1",
+    "angular2-jwt": "^0.2.0",
+    "cachefactory": "^3.0.0",
+    "nativescript-angular": "3.0.0",
+    "nativescript-angular-snapshot": "3.0.0-5.5.372.32",
+    "nativescript-feedback": "^1.0.2",
+    "nativescript-intl": "^3.0.0",
+    "nativescript-loading-indicator": "^2.2.2",
+    "nativescript-theme-core": "~1.0.2",
     "reflect-metadata": "~0.1.8",
-    "rxjs": "~5.0.1",
-    "tns-core-modules": "^2.5.2"
+    "rxjs": "~5.3.1",
+    "tns-core-modules": "3.0.0",
+    "zone.js": "~0.8.10"
   },
   "devDependencies": {
     "babel-traverse": "6.23.1",
     "babel-types": "6.23.0",
     "babylon": "6.16.1",
     "lazy": "1.0.11",
-    "nativescript-dev-typescript": "^0.3.5",
-    "typescript": "~2.1.0",
-    "zone.js": "~0.7.2"
+    "nativescript-dev-android-snapshot": "0.0.10",
+    "nativescript-dev-typescript": "^0.4.2",
+    "typescript": "2.2.2"
   }
 }
