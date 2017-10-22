@@ -1,59 +1,51 @@
 import { Component, OnInit } from "@angular/core";
 import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
 
-import { CourseProvider } from '../../providers/course-provider';
 import { ICourse } from '../../interfaces/course';
+import { IPost } from '../../interfaces/post';
 import { LoadingProvider } from '../../providers/loading-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { PostProvider } from '../../providers/post-provider';
 import { Router } from '../../providers/router-provider';
 import { StateProvider } from '../../providers/state-provider';
 
 @Component({
   moduleId: module.id,
-  selector: "cursos-page",
-  styleUrls: ['./cursos.css'],
-  templateUrl: './cursos.html',
+  selector: "inspire-me-page",
+  styleUrls: ['./inspire-me.css'],
+  templateUrl: './inspire-me.html',
   providers: []
 })
 
-export class CursosPage implements OnInit {
+export class InspireMePage implements OnInit {
   private data = {
     temas: [ {
-      tema: 'Front-end',
+      tema: 'Como me tornei desenvolvedora front-end',
     },
     {
-      tema: 'Back-end',
+      tema: 'Meu sonho de trabalhar com UX',
     },
     {
-      tema: 'Banco de Dados',
+      tema: 'Como virei desenvolvedora Java',
     }]
   };
 
-  public courses: Array<ICourse>;
+  public posts: Array<IPost>;
 
   constructor(
     private loadingProvider: LoadingProvider,
     private routerExtensions: RouterExtensions,
     private stateProvider: StateProvider,
-    private courseProvider: CourseProvider,
     private router: Router,
+    private postProvider: PostProvider
   ) {
-    this.courseProvider.list().subscribe(courses => {
-      this.courses = courses;
+    this.postProvider.list().subscribe(posts => {
+      this.posts = posts;
     });
   }
 
   onTemaTap(tema: string) {
     console.dir(tema);
-    if(tema === 'Front-end') {
-      tema = 'frontend';
-    }
-    if(tema === 'Back-end') {
-      tema = 'backend';
-    }
-    if(tema === 'Banco de Dados') {
-      tema = 'database';
-    }
     this.router.navigate(`/cursos/cursos-detalhe?tema=${tema}`);
   }
 
@@ -64,5 +56,6 @@ export class CursosPage implements OnInit {
   onBackTap() {
     // this.hideKeyboard();
     this.routerExtensions.back();
-  } 
+  }
+  
 }

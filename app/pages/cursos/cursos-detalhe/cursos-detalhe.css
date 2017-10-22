@@ -1,4 +1,13 @@
-.cursos-detalhe-page .title-group {
+.cursos-detalhe-page .list-item .title {
+    margin: 0;
+}
+
+.cursos-detalhe-page .list-item .description {
+    text-align: left;
+}
+
+
+/*.cursos-detalhe-page .title-group {
     background-color: #e278ae;
     padding: 10 15;
     font-size: 16;
@@ -27,4 +36,4 @@
 
 .cursos-detalhe-page .card .card-title {
     font-size: 16;
-}
+}*/

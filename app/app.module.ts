@@ -19,6 +19,7 @@ import { EventosDetalhePage } from './pages/eventos/eventos-detalhe/eventos-deta
 import { EventosPage } from './pages/eventos/eventos';
 import { ExternalProvider } from './providers/external-providers';
 import { GroupsProvider } from './providers/groups-provider';
+import { InspireMePage } from './pages/inspire-me/inspire-me';
 import { InspiredsDetalhePage } from './pages/inspireds/inspireds-detalhe/inspireds-detalhe';
 import { InspiredsPage } from './pages/inspireds/inspireds';
 import { InspirersDetalhePage } from './pages/inspirers/inspirers-detalhe/inspirers-detalhe';
@@ -30,6 +31,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpModule } from 'nativescript-angular';
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { PalletTime } from './pipes/pallet-time.pipe';
+import { PostProvider } from './providers/post-provider';
 import { Router } from './providers/router-provider';
 import { StateProvider } from './providers/state-provider';
 import { UserProvider } from './providers/user-provider';
@@ -48,6 +50,7 @@ import { httpFactory } from "./interceptor/http-factory";
     CursosDetalhePage,
     EventosPage,
     EventosDetalhePage,
+    InspireMePage,
     InspirersPage,
     InspirersDetalhePage,
     InspiredsPage,
@@ -70,12 +73,13 @@ import { httpFactory } from "./interceptor/http-factory";
   providers: [
     CacheFactory,
     CacheProvider,
-    GroupsProvider,
     CourseProvider,
     EnvironmentProvider,
     ExternalProvider,
+    GroupsProvider,
     LoadingProvider,
     LoginProvider,
+    PostProvider,
     Router,
     StateProvider,
     UserProvider,

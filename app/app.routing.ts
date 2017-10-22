@@ -8,6 +8,7 @@ import { CursosPage } from './pages/cursos/cursos';
 import { DashboardPage } from './pages/dashboard/dashboard';
 import { EventosDetalhePage } from './pages/eventos/eventos-detalhe/eventos-detalhe';
 import { EventosPage } from './pages/eventos/eventos';
+import { InspireMePage } from './pages/inspire-me/inspire-me';
 import { InspiredsDetalhePage } from './pages/inspireds/inspireds-detalhe/inspireds-detalhe';
 import { InspiredsPage } from './pages/inspireds/inspireds';
 import { InspirersDetalhePage } from './pages/inspirers/inspirers-detalhe/inspirers-detalhe';
@@ -39,5 +40,7 @@ export const appRoutes: Routes = [
 
   { path: 'inspireds', component: InspiredsPage},
   { path: 'inspireds/inspireds-detalhe', component: InspiredsDetalhePage},
+
+  { path: 'inspire-me', component: InspireMePage},
   
 ];

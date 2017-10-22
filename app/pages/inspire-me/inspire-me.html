@@ -1,0 +1,24 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
+    <StackLayout orientation="horizontal" android:horizontalAlignment="center">
+        <Label text="Inspire Me" class="action-label" horizontalAlignment="center"></Label>
+    </StackLayout>
+</ActionBar>
+<GridLayout class="cursos-page" columns="*" rows="auto, *, auto">
+    <StackLayout col="0" row="0" margin="15" horizontalAlignment="center">
+        <Label fontSize="20" text="Depoimentos de Inspirers podem te ajudar a encontrar uma motivação" horizontalAlignemnt="center" textWrap="true"></Label>
+        <Label fontSize="20" text="Então vamos lá! Se inspire!" horizontalAlignemnt="center"></Label>
+    </StackLayout>
+    <ListView [items]="posts" col="0" row="1">
+        <ng-template let-item="item">
+            <StackLayout (tap)="onPostTap()">
+                <GridLayout class="list-item" columns="auto, *" rows="auto">
+                    <StackLayout col="0" row="0" marginRight="15" height="100%" width="10" style="background-color: #db1479;"></StackLayout>
+                    <StackLayout col="1" row="0" orientation="vertical">
+                        <Label class="group-title" text="{{ item.title }}" marginTop="-5" horizontalAlignment="left"></Label>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
