@@ -1,0 +1,18 @@
+<ActionBar>
+  <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
+  <StackLayout orientation="horizontal" android:horizontalAlignment="center">
+      <Image src="res://logo" height="30" horizontalAlignment="center"></Image>
+      <!-- <Label text="Compartilhar experiência" class="action-label" horizontalAlignment="center"></Label> -->
+  </StackLayout>
+</ActionBar>
+<GridLayout class="cadastrar-page" columns="*" rows="auto, auto, auto, auto" margin="15">
+  <Label col="0" row="0" text="Com certeza você possui algum case que vai ajudar a inspirar outras mulheres, conta pra gente!" fontSize="22" verticalAlignment="center" textWrap="true"></Label>
+  <StackLayout col="0" row="1">
+      <StackLayout>
+          <TextField id="nameInput" [(ngModel)]="post.author" hint="Nome da autora" textWrap="true"></TextField>
+          <TextField id="titleInput" [(ngModel)]="post.title" hint="Título"></TextField>
+          <TextView id="contentInput" [(ngModel)]="post.content" hint="Conteúdo" height="200" textWrap="true"></TextView>
+      </StackLayout>
+  </StackLayout>
+  <Button col="0" row="2" text="Enviar" (tap)="onEnviarPost()"></Button>  
+</GridLayout>

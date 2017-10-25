@@ -11,7 +11,7 @@
     </StackLayout>
     <ListView [items]="posts" col="0" row="1">
         <ng-template let-item="item">
-            <StackLayout (tap)="onPostTap()">
+            <StackLayout (tap)="onPostTap(item)">
                 <GridLayout class="list-item" columns="auto, *" rows="auto">
                     <StackLayout col="0" row="0" marginRight="15" height="100%" width="10" style="background-color: #db1479;"></StackLayout>
                     <StackLayout col="1" row="0" orientation="vertical">

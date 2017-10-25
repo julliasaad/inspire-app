@@ -38,4 +38,14 @@ export class PostProvider {
 			return Observable.of(data);
 		});
 	}
+
+	create(post: IPost): Observable<IPost> {
+    let url = `https://quiet-dawn-28527.herokuapp.com/api/post`;
+    return this.http.post(url, post)
+      .switchMap(r => {
+        console.dir(r);
+        const result = r.json();
+        return Observable.of(result);
+    	});
+  }
 }

@@ -1,5 +1,5 @@
 export interface IPost {
-    authot?: string,
+    author?: string,
     title?: string,
     content?:string
 }

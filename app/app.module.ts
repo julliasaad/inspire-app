@@ -3,6 +3,7 @@ import { NO_ERRORS_SCHEMA, NgModule } from "@angular/core";
 import { NativeScriptRouterModule, RouterExtensions } from "nativescript-angular/router";
 import { RouterModule, Routes } from "@angular/router";
 
+import { AddPostPage } from './pages/administrativo/add-post/add-post';
 import { AdministrativoPage } from './pages/administrativo/administrativo';
 import { AppComponent } from "./app.component";
 import { CacheFactory } from 'cachefactory';
@@ -31,6 +32,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpModule } from 'nativescript-angular';
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { PalletTime } from './pipes/pallet-time.pipe';
+import { PostDetalhePage } from './pages/inspire-me/post-detalhe/post-detalhe';
 import { PostProvider } from './providers/post-provider';
 import { Router } from './providers/router-provider';
 import { StateProvider } from './providers/state-provider';
@@ -43,6 +45,7 @@ import { httpFactory } from "./interceptor/http-factory";
 @NgModule({
   declarations: [
     AppComponent,
+    AddPostPage,
     AdministrativoPage,
     CadastrarPage,
     CadastrarDetalhesPage,
@@ -57,6 +60,7 @@ import { httpFactory } from "./interceptor/http-factory";
     InspiredsDetalhePage,
     VideosPage,
     PalletTime,
+    PostDetalhePage,
     LoginPage,
     DashboardPage,
     WebviewCursoPage

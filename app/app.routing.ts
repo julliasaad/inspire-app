@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from "@angular/router";
 
+import { AddPostPage } from './pages/administrativo/add-post/add-post';
 import { AdministrativoPage } from './pages/administrativo/administrativo';
 import { CadastrarDetalhesPage } from './pages/cadastrar/cadastrar-detalhes/cadastrar-detalhes';
 import { CadastrarPage } from './pages/cadastrar/cadastrar';
@@ -14,6 +15,7 @@ import { InspiredsPage } from './pages/inspireds/inspireds';
 import { InspirersDetalhePage } from './pages/inspirers/inspirers-detalhe/inspirers-detalhe';
 import { InspirersPage } from './pages/inspirers/inspirers';
 import { LoginPage } from './pages/login/login';
+import { PostDetalhePage } from './pages/inspire-me/post-detalhe/post-detalhe';
 import { VideosPage } from './pages/videos/videos';
 import { WebviewCursoPage } from './pages/cursos/cursos-detalhe/webview-curso/webview-curso';
 
@@ -26,6 +28,8 @@ export const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardPage },
 
   { path: 'administrativo', component: AdministrativoPage },
+  { path: 'administrativo/post', component: AddPostPage },
+  
 
   { path: 'eventos', component: EventosPage },
   { path: 'eventos/eventos-detalhe', component: EventosDetalhePage },
@@ -35,6 +39,7 @@ export const appRoutes: Routes = [
   { path: 'cursos/cursos-detalhe/webview-curso', component: WebviewCursoPage },   
 
   { path: 'videos', component: VideosPage },
+  
   { path: 'inspirers', component: InspirersPage },
   { path: 'inspirers/inspirers-detalhe', component: InspirersDetalhePage },
 
@@ -42,5 +47,7 @@ export const appRoutes: Routes = [
   { path: 'inspireds/inspireds-detalhe', component: InspiredsDetalhePage},
 
   { path: 'inspire-me', component: InspireMePage},
+  { path: 'inspire-me/post', component: PostDetalhePage},
+  
   
 ];

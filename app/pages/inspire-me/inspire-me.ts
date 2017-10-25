@@ -49,6 +49,11 @@ export class InspireMePage implements OnInit {
     this.router.navigate(`/cursos/cursos-detalhe?tema=${tema}`);
   }
 
+  onPostTap(post) {
+    console.dir(post);
+    this.router.navigate(`/inspire-me/post?title=${post.title}`);
+  }
+
   ngOnInit() {
     this.loadingProvider.hide();
   }
