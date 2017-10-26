@@ -30,11 +30,13 @@ export class PostProvider {
 			}
 			const data:IPost[] = result.map(post => {
 				return {
+					id: post._id,
 					author: post.author,
 					title: post.title,
 					content: post.content,
 				};
 			});
+			console.dir(data);
 			return Observable.of(data);
 		});
 	}
@@ -43,9 +45,28 @@ export class PostProvider {
     let url = `https://quiet-dawn-28527.herokuapp.com/api/post`;
     return this.http.post(url, post)
       .switchMap(r => {
-        console.dir(r);
-        const result = r.json();
+				const result = r.json();
+        console.dir(result);
         return Observable.of(result);
     	});
-  }
+	}
+	
+	getById(id: string): Observable<IPost> {
+		let url = `localhost:3000/api/post/${id}`;
+		// let url = `https://quiet-dawn-28527.herokuapp.com/api/post/${id}`;
+		return this.http.get(url)
+		.switchMap(r => {
+			const result = r.json();
+			if (result.erro) {
+				throw new Error();
+			}
+			const data: IPost = {
+				id: result.id,
+				author: result.author,
+				title: result.title,
+				content: result.content,
+			};
+			return Observable.of(data);
+		});
+	}
 }

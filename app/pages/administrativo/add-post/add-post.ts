@@ -20,6 +20,7 @@ export class AddPostPage implements OnInit {
   private feedback: Feedback;
   
   public post: IPost = {
+    id: null, 
     author: null, 
     title: null, 
     content: null

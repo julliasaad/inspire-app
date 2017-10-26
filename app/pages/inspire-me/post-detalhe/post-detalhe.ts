@@ -6,6 +6,7 @@ import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
 import { StateProvider } from '../../../providers/state-provider';
 import { PostProvider } from '../../../providers/post-provider';
 import { IPost } from '../../../interfaces/post';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -16,19 +17,35 @@ import { IPost } from '../../../interfaces/post';
 })
 
 export class PostDetalhePage implements OnInit {
-  public posts: IPost;
+  public post: IPost = {
+    id: null, 
+    author: null, 
+    title: null, 
+    content: null
+  };
+  public postitle: string = "juju";
 
   constructor(
     private loadingProvider: LoadingProvider,
     private routerExtensions: RouterExtensions,
     private stateProvider: StateProvider,
-    private loginProvider: LoginProvider
-
+    private loginProvider: LoginProvider,
+    private route: ActivatedRoute,
+    private postProvider: PostProvider
+    
   ) {
   }
 
   ngOnInit() {
     this.loadingProvider.hide();
+		this.route.queryParams.subscribe(params => {
+      this.post.id = params['id'];
+    });
+
+    this.postProvider.getById(this.post.id).subscribe(post => {
+      console.dir(post);
+      this.post = post;
+    })
   }
 
   onBackTap() {
