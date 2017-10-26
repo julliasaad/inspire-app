@@ -73,11 +73,8 @@ export class CadastrarDetalhesPage implements OnInit {
 			}).then(function (r) {
 				if(r.text && r.result) {
 					this.user.biography = r.text;
-					console.log(this.user);
 					this.userProvider.create(this.user).subscribe(user => {
-						console.dir(user);
 						this.userUpdated = user;
-						console.dir(this.userUpdated);
 					});
 				} else if(!r.text) {
 					this.feedback.warning({
