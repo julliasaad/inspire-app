@@ -4,6 +4,8 @@ import { LoginProvider } from '../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
 import { StateProvider } from '../../providers/state-provider';
+import { IUser } from '../../interfaces/user';
+import { UserProvider } from '../../providers/user-provider';
 
 @Component({
   moduleId: module.id,
@@ -14,39 +16,17 @@ import { StateProvider } from '../../providers/state-provider';
 })
 
 export class InspirersPage implements OnInit {
-  private data = {
-    inspirers: [ {
-      nome: 'Amanda Vilela',
-      descricao:'Trabalha na área há 2 anos, estuda na Fatec Sorocaba'
-    },
-    {
-      nome: 'Ana Gabriel',
-      descricao:'Trabalha na área há 2 anos, estuda na Fatec Sorocaba'      
-    },
-    {
-      nome: 'Jullia Saad',
-      descricao:'Trabalha na área há 2 anos, estuda na Fatec Sorocaba'      
-    },
-    {
-      nome: 'Caroline Pascale',
-      descricao:'Trabalha na área há 2 anos, estuda na Fatec Sorocaba'      
-    }]
-  };
+  public users: Array<IUser>;
+  
   constructor(
     private loadingProvider: LoadingProvider,
     private routerExtensions: RouterExtensions,
     private stateProvider: StateProvider,
-    private loginProvider: LoginProvider
-
+    private userProvider: UserProvider
   ) {
-    // this.filiais = this.stateProvider.get("filiais");
-    // this.filial = this.stateProvider.get("filial");
-    // this.permissions = this.stateProvider.get("permissions");
-    // Object.keys(this.permissions).forEach(k => {
-    //   if (this.permissions[k] === true) {
-    //     this.permissionsCount++
-    //   }
-    // })
+    this.userProvider.list().subscribe(users => {
+      this.users = users;
+    });
   }
 
   ngOnInit() {

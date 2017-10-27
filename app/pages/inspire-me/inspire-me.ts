@@ -18,17 +18,6 @@ import { StateProvider } from '../../providers/state-provider';
 })
 
 export class InspireMePage implements OnInit {
-  private data = {
-    temas: [ {
-      tema: 'Como me tornei desenvolvedora front-end',
-    },
-    {
-      tema: 'Meu sonho de trabalhar com UX',
-    },
-    {
-      tema: 'Como virei desenvolvedora Java',
-    }]
-  };
 
   public posts: Array<IPost>;
 

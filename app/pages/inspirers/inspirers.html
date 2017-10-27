@@ -5,14 +5,14 @@
     </StackLayout>
 </ActionBar>
 <GridLayout class="inspirers-page" columns="*" rows="*, auto, auto, auto">
-    <ListView [items]="data.inspirers" col="0" row="0">
+    <ListView [items]="users" col="0" row="0">
         <ng-template let-item="item">
             <StackLayout>
                 <GridLayout class="list-item" columns="auto, *" rows="auto">
                     <Image col="0" row="0" marginRight="10" marginLeft="10" src="https://pbs.twimg.com/profile_images/826548428385681408/13n_r40Y_400x400.jpg" height="50"></Image>
                     <StackLayout col="1" row="0" orientation="vertical">
-                        <Label class="group-title" text="{{ item.titulo }}" marginTop="-5"></Label>
-                        <Label class="group-description" text="{{ item.descricao }}" [textWrap]="true" marginTop="-25"></Label>            
+                        <Label class="group-title" text="{{ item.name }}" marginTop="-5"></Label>
+                        <Label class="group-description" text="{{ item.biography }}" [textWrap]="true" marginTop="-25"></Label>            
                     </StackLayout>
                 </GridLayout>
                 <StackLayout (tap)="onSaberMais()" horizontalAlignment="right" marginRight="10">
