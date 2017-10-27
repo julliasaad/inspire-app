@@ -7,6 +7,7 @@ import { LoadingProvider } from '../../providers/loading-provider';
 import { LoginProvider } from '../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { StateProvider } from '../../providers/state-provider';
+var utilityModule = require("utils/utils");
 
 @Component({
   moduleId: module.id,
@@ -17,8 +18,8 @@ import { StateProvider } from '../../providers/state-provider';
 })
 
 export class VideosPage implements OnInit {
-  // public videos: Array<IVideo>;
-  public videos: string;
+  public videos: Array<IVideo>;
+
   constructor(
     private loadingProvider: LoadingProvider,
     private routerExtensions: RouterExtensions,
@@ -29,7 +30,7 @@ export class VideosPage implements OnInit {
   ) {
     this.externalProvider.listVideos().subscribe(videos => {
       this.videos = videos;
-      console.dir(videos);
+      this.videos.pop();
     });
   }
 
@@ -37,8 +38,13 @@ export class VideosPage implements OnInit {
     this.loadingProvider.hide();
   }
 
+  onVideoTap(id: string) {
+    utilityModule.openUrl(`https://www.youtube.com/watch?v=${id}`);
+  }
+
   onBackTap() {
     // this.hideKeyboard();
     this.routerExtensions.back();
-  } 
+  }
+  
 }

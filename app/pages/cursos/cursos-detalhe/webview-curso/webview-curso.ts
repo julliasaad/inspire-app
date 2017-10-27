@@ -9,7 +9,6 @@ import { WebView, LoadEventData } from "ui/web-view";
 @Component({
   moduleId: module.id,
   selector: "webview-curso-page",
-  // styleUrls: ['./webview-curso.css'],
   templateUrl: './webview-curso.html',
   providers: []
 })
@@ -24,14 +23,7 @@ export class WebviewCursoPage implements OnInit {
     private loginProvider: LoginProvider
 
   ) {
-    // this.filiais = this.stateProvider.get("filiais");
-    // this.filial = this.stateProvider.get("filial");
-    // this.permissions = this.stateProvider.get("permissions");
-    // Object.keys(this.permissions).forEach(k => {
-    //   if (this.permissions[k] === true) {
-    //     this.permissionsCount++
-    //   }
-    // })
+
   }
 
   ngOnInit() {
