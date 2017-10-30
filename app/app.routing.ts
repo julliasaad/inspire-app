@@ -32,7 +32,7 @@ export const appRoutes: Routes = [
   
 
   { path: 'eventos', component: EventosPage },
-  { path: 'eventos/eventos-detalhe', component: EventosDetalhePage },
+  { path: 'eventos/detalhe', component: EventosDetalhePage },
 
   { path: 'cursos', component: CursosPage },
   { path: 'cursos/cursos-detalhe', component: CursosDetalhePage }, 

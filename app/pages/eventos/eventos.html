@@ -7,7 +7,7 @@
 <GridLayout class="eventos-page" columns="*" rows="*, auto, auto, auto">
     <ListView [items]="grupos" col="0" row="0">
         <ng-template let-item="item">
-            <StackLayout (tap)="onEventoTap()">
+            <StackLayout (tap)="onEventoTap(item)">
                 <GridLayout class="list-item" columns="auto, *" rows="auto">
                     <Image col="0" row="0" marginRight="10" marginLeft="10" [src]="item.photo" height="50"></Image>
                     <StackLayout col="1" row="0" orientation="vertical">

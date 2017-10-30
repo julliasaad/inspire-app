@@ -7,6 +7,7 @@ import { LoadingProvider } from '../../providers/loading-provider';
 import { LoginProvider } from '../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { StateProvider } from '../../providers/state-provider';
+import { Router } from '../../providers/router-provider';
 
 @Component({
   moduleId: module.id,
@@ -27,14 +28,17 @@ export class EventosPage implements OnInit {
     private stateProvider: StateProvider,
     private loginProvider: LoginProvider,
     private groupsProvider: GroupsProvider,
+    private router: Router,
+    
   ) {
     this.groupsProvider.listGroups().subscribe(grupos => {
       this.grupos = grupos;
+      console.dir(this.grupos);
     });
   }
 
-  onEventoTap() {
-    this.routerExtensions.navigate([`/eventos/eventos-detalhe`]);
+  onEventoTap(grupo) {
+    this.router.navigate(`/eventos/detalhe?urlname=${grupo.urlname}`);
   }
 
   ngOnInit() {

@@ -1,6 +1,6 @@
 import { Headers, Http, RequestOptions } from '@angular/http';
 
-import { IGroup } from '../interfaces/events';
+import { IGroup, IEvent } from '../interfaces/events';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { StateProvider } from './state-provider';
@@ -24,6 +24,7 @@ export class GroupsProvider {
         const data:IGroup[] = result.map(group => {
           return {
             name: group.name,
+            urlname: group.urlname,
             description: group.description,
             link: group.link,
           };
@@ -31,4 +32,23 @@ export class GroupsProvider {
         return Observable.of(data);
       });
   }
+  getByUrlName(urlname: string): Observable<IEvent> {
+		let url = `https://api.meetup.com/${urlname}/events?scroll=recent_past&photo-host=public&page=20&sig_id=212425931&status=upcoming&sig=b1e1de4d33a092f283d634009dfe526ab93f392a`;
+		return this.http.get(url)
+		.switchMap(r => {
+      let result = r.json();
+      
+      console.dir(result);
+			if (result.erro) {
+				throw new Error();
+			}
+			const data: IEvent = {
+				name: result[0].name,
+        description: result[0].description,
+        local: result[0].venue,
+        link: result[0].link
+			};
+			return Observable.of(data);
+		});
+	}
 }
