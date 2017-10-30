@@ -34,7 +34,6 @@ export class InspireMePage implements OnInit {
   }
 
   onPostTap(post) {
-    console.dir(post);
     this.router.navigate(`/inspire-me/post?id=${post.id}`);
   }
 

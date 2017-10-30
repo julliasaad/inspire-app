@@ -1,0 +1,17 @@
+<ActionBar>
+  <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
+  <StackLayout orientation="horizontal" android:horizontalAlignment="center">
+      <Label text="Inspirer" horizontalAlignment="center"></Label>
+  </StackLayout>
+</ActionBar>
+<GridLayout class="inspirers-detalhe-page" columns="*" rows="auto, auto, auto, auto">
+  <StackLayout col="1" row="0" orientation="vertical">
+      <Image src="https://secure.meetupstatic.com/photos/event/7/d/5/f/highres_459452095.jpeg"></Image>        
+      <!--<StackLayout class="title-group">
+      </StackLayout>-->
+      <Label [text]="user.name" class="title-group" horizontalAlignment="center" marginTop="-20"></Label>        
+  </StackLayout>
+  <StackLayout col="1" row="1" orientation="vertical" marginLeft="10" marginBottom="15" padding="10">
+      <Label [text]="user.biography" [textWrap]="true"></Label>        
+  </StackLayout>
+</GridLayout>

@@ -47,5 +47,4 @@ export class PostDetalhePage implements OnInit {
   onBackTap() {
     this.routerExtensions.back();
   }
-  
 }

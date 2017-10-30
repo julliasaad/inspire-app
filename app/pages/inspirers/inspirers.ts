@@ -6,6 +6,7 @@ import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
 import { StateProvider } from '../../providers/state-provider';
 import { IUser } from '../../interfaces/user';
 import { UserProvider } from '../../providers/user-provider';
+import { Router } from '../../providers/router-provider';
 
 @Component({
   moduleId: module.id,
@@ -22,7 +23,9 @@ export class InspirersPage implements OnInit {
     private loadingProvider: LoadingProvider,
     private routerExtensions: RouterExtensions,
     private stateProvider: StateProvider,
-    private userProvider: UserProvider
+    private userProvider: UserProvider,
+    private router: Router,
+    
   ) {
     this.userProvider.list().subscribe(users => {
       this.users = users;
@@ -33,9 +36,14 @@ export class InspirersPage implements OnInit {
     this.loadingProvider.hide();
   }
 
+  onSaberMais(user) {
+    this.router.navigate(`/inspirers/detalhe?id=${user.id}`);
+  }
+
   onBackTap() {
     // this.hideKeyboard();
     this.routerExtensions.back();
-  } 
+  }
+   
 } 
 

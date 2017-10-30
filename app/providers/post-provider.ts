@@ -51,7 +51,6 @@ export class PostProvider {
 	}
 	
 	getById(id: string): Observable<IPost> {
-		// let url = `localhost:3000/api/post/${id}`;
 		let url = `https://quiet-dawn-28527.herokuapp.com/api/post/${id}`;
 		return this.http.get(url)
 		.switchMap(r => {

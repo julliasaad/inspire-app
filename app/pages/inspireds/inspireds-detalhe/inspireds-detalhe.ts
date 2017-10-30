@@ -4,6 +4,10 @@ import { LoginProvider } from '../../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
 import { StateProvider } from '../../../providers/state-provider';
+import { ActivatedRoute } from '@angular/router';
+import { UserProvider } from '../../../providers/user-provider';
+import { IUser } from '../../../interfaces/user';
+
 
 @Component({
   moduleId: module.id,
@@ -14,48 +18,37 @@ import { StateProvider } from '../../../providers/state-provider';
 })
 
 export class InspiredsDetalhePage implements OnInit {
-  private data = {
-    inspireds: [ {
-      nome: 'Amanda Vilela',
-      descricao:'Trabalha na área há 2 anos, estuda na Fatec Sorocaba'
-    },
-    {
-      nome: 'Ana Gabriel',
-      descricao:'Trabalha na área há 2 anos, estuda na Fatec Sorocaba'      
-    },
-    {
-      nome: 'Jullia Saad',
-      descricao:'Trabalha na área há 2 anos, estuda na Fatec Sorocaba'      
-    },
-    {
-      nome: 'Caroline Pascale',
-      descricao:'Trabalha na área há 2 anos, estuda na Fatec Sorocaba'      
-    }]
+  public user: IUser = {
+    name: null, 
+    biography: null 
   };
+
   constructor(
     private loadingProvider: LoadingProvider,
     private routerExtensions: RouterExtensions,
     private stateProvider: StateProvider,
-    private loginProvider: LoginProvider
+    private route: ActivatedRoute,
+    private userProvider: UserProvider
 
   ) {
-    // this.filiais = this.stateProvider.get("filiais");
-    // this.filial = this.stateProvider.get("filial");
-    // this.permissions = this.stateProvider.get("permissions");
-    // Object.keys(this.permissions).forEach(k => {
-    //   if (this.permissions[k] === true) {
-    //     this.permissionsCount++
-    //   }
-    // })
+
   }
 
   ngOnInit() {
     this.loadingProvider.hide();
+		this.route.queryParams.subscribe(params => {
+      this.user.id = params['id'];
+    });
+
+    this.userProvider.getById(this.user.id).subscribe(user => {
+      this.user = user;
+    })
   }
 
   onBackTap() {
     // this.hideKeyboard();
     this.routerExtensions.back();
   } 
+  
 } 
 

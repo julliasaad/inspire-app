@@ -41,10 +41,10 @@ export const appRoutes: Routes = [
   { path: 'videos', component: VideosPage },
   
   { path: 'inspirers', component: InspirersPage },
-  { path: 'inspirers/inspirers-detalhe', component: InspirersDetalhePage },
+  { path: 'inspirers/detalhe', component: InspirersDetalhePage },
 
   { path: 'inspireds', component: InspiredsPage},
-  { path: 'inspireds/inspireds-detalhe', component: InspiredsDetalhePage},
+  { path: 'inspireds/detalhe', component: InspiredsDetalhePage},
 
   { path: 'inspire-me', component: InspireMePage},
   { path: 'inspire-me/post', component: PostDetalhePage},

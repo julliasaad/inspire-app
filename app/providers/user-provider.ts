@@ -45,4 +45,21 @@ export class UserProvider {
         return Observable.of(result);
     	});
   }
+
+  getById(id: string): Observable<IUser> {
+		let url = `https://quiet-dawn-28527.herokuapp.com/api/user/${id}`;
+		return this.http.get(url)
+		.switchMap(r => {
+			const result = r.json();
+			if (result.erro) {
+				throw new Error();
+			}
+			const data: IUser = {
+        id: result.id,
+        name: result.name,
+        biography: result.biography
+			};
+			return Observable.of(data);
+		});
+	}
 }
