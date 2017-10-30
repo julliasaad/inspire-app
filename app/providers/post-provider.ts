@@ -36,7 +36,6 @@ export class PostProvider {
 					content: post.content,
 				};
 			});
-			console.dir(data);
 			return Observable.of(data);
 		});
 	}
@@ -52,8 +51,8 @@ export class PostProvider {
 	}
 	
 	getById(id: string): Observable<IPost> {
-		let url = `localhost:3000/api/post/${id}`;
-		// let url = `https://quiet-dawn-28527.herokuapp.com/api/post/${id}`;
+		// let url = `localhost:3000/api/post/${id}`;
+		let url = `https://quiet-dawn-28527.herokuapp.com/api/post/${id}`;
 		return this.http.get(url)
 		.switchMap(r => {
 			const result = r.json();

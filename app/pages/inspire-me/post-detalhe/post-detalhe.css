@@ -1,0 +1,26 @@
+.posts-detalhe-page .title-group {
+  background-color: #e278ae;
+  padding: 10 15;
+  font-size: 16;
+  color: white;
+  text-align: center;
+}
+
+.posts-detalhe-page .title {
+  font-size: 16;
+}
+
+.posts-detalhe-page .card {
+  background-color: #F5F5F5;
+  margin-top: 5;
+}
+.posts-detalhe-page .card .card-border {
+  background-color: #e80076;
+  width: 1%;
+  height: 30;
+  margin-right: 10;
+}
+
+.posts-detalhe-page .card .card-title {
+  font-size: 16;
+}

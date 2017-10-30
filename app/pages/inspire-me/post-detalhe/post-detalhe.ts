@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { LoadingProvider } from '../../../providers/loading-provider';
-import { LoginProvider } from '../../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
 import { StateProvider } from '../../../providers/state-provider';
@@ -23,13 +22,11 @@ export class PostDetalhePage implements OnInit {
     title: null, 
     content: null
   };
-  public postitle: string = "juju";
 
   constructor(
     private loadingProvider: LoadingProvider,
     private routerExtensions: RouterExtensions,
     private stateProvider: StateProvider,
-    private loginProvider: LoginProvider,
     private route: ActivatedRoute,
     private postProvider: PostProvider
     
@@ -43,14 +40,12 @@ export class PostDetalhePage implements OnInit {
     });
 
     this.postProvider.getById(this.post.id).subscribe(post => {
-      console.dir(post);
       this.post = post;
     })
   }
 
   onBackTap() {
-    // this.hideKeyboard();
     this.routerExtensions.back();
   }
-
+  
 }

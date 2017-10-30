@@ -1,16 +1,17 @@
 <ActionBar>
   <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
   <StackLayout orientation="horizontal" android:horizontalAlignment="center">
-    <Label text="Eventos" horizontalAlignment="center"></Label>
+    <Label text="Post" horizontalAlignment="center"></Label>
   </StackLayout>
 </ActionBar>
-<GridLayout class="eventos-detalhe-page" columns="*" rows="auto, auto">
-  <StackLayout col="1" row="0" orientation="vertical">
-    <Image src="https://secure.meetupstatic.com/photos/event/7/d/5/f/highres_459452095.jpeg"></Image>        
-    <Label [text]="post.title" class="title-group" horizontalAlignment="center" marginTop="-20"></Label>        
-  </StackLayout>
-  <StackLayout col="1" row="1" orientation="vertical" marginLeft="10" marginBottom="15">
-    <Label text="Descrição" class="title"></Label>
-    <Label [text]="post.content" [textWrap]="true"></Label>        
-  </StackLayout>
-</GridLayout>
+<ScrollView>
+  <GridLayout class="posts-detalhe-page" columns="*" rows="auto, auto">
+    <StackLayout col="1" row="0" orientation="vertical">
+      <Label [text]="post.title" class="title-group" horizontalAlignment="center" marginTop="0" textWrap="true" width="100%"></Label>        
+    </StackLayout>
+    <StackLayout col="1" row="1" orientation="vertical" marginLeft="10" marginBottom="15" padding="15">
+      <Label [text]="post.author" class="title"></Label>
+      <Label [text]="post.content" [textWrap]="true" fontSize="14"></Label>        
+    </StackLayout>
+  </GridLayout>
+</ScrollView>
