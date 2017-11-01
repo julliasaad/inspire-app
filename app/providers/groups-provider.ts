@@ -1,6 +1,6 @@
 import { Headers, Http, RequestOptions } from '@angular/http';
+import { IEvent, IGroup } from '../interfaces/events';
 
-import { IGroup, IEvent } from '../interfaces/events';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { StateProvider } from './state-provider';
@@ -14,7 +14,7 @@ export class GroupsProvider {
   ) { }
 
   listGroups(): Observable<IGroup[]>{
-    let url = `https://api.meetup.com/find/groups?upcoming_events=true&photo-host=public&location=Sorocaba%2C+Brasil&page=20&country=brasil&sig_id=212425931&category=34&sig=56117750019c169fe18652f2d0f0c3d092174ce2`;
+    let url = `https://api.meetup.com/find/groups?upcoming_events=true&photo-host=public&location=sorocaba&page=20&country=BR&sig_id=212425931&radius=45&category=34&sign=true&key=1f662c5e7a545270276f1b3a146d68`;
     return this.http.get(url)
       .switchMap(r => {
         const result = r.json();
@@ -27,28 +27,32 @@ export class GroupsProvider {
             urlname: group.urlname,
             description: group.description,
             link: group.link,
+            next_event: group.next_event.id,
+            group_photo: group.group_photo
           };
         });
         return Observable.of(data);
       });
   }
-  getByUrlName(urlname: string): Observable<IEvent> {
-		let url = `https://api.meetup.com/${urlname}/events?scroll=recent_past&photo-host=public&page=20&sig_id=212425931&status=upcoming&sig=b1e1de4d33a092f283d634009dfe526ab93f392a`;
-		return this.http.get(url)
+  
+  getByUrlName(urlname: string, eventId: string): Observable<IEvent> {
+		let url = `https://api.meetup.com/${urlname}/events/${eventId}?photo-host=public&sig_id=212425931&sign=true&key=1f662c5e7a545270276f1b3a146d68`;
+    console.log(url);
+    return this.http.get(url)
 		.switchMap(r => {
       let result = r.json();
       
-      console.dir(result);
 			if (result.erro) {
 				throw new Error();
 			}
 			const data: IEvent = {
-				name: result[0].name,
-        description: result[0].description,
-        local: result[0].venue,
-        link: result[0].link
+				name: result.name,
+        description: result.description,
+        local: result.venue,
+        link: result.link
 			};
 			return Observable.of(data);
 		});
 	}
+  
 }

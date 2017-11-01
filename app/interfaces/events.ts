@@ -4,7 +4,8 @@ export interface IGroup {
     description?: string,
     link: string,
     group_photo: IGroupPhoto,
-    photo: string
+    photo: string,
+    next_event: string
 }
 
 export interface IGroupPhoto {
@@ -17,14 +18,16 @@ export interface IGroupPhoto {
 }
 
 export interface IEvent {
+    id?: string,
     name: string,
     urlname?: string,
     description: string,
-    local: ILocal,
-    link: string
+    local?: ILocal,
+    link: string,
 }
 
 export interface ILocal {
+    name: string,
     address: string,
     city: string
 }

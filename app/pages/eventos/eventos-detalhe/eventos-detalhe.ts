@@ -1,12 +1,13 @@
 import { Component, OnInit } from "@angular/core";
+import { IEvent, ILocal } from '../../../interfaces/events';
+import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
+
+import { ActivatedRoute } from '@angular/router';
+import { GroupsProvider } from '../../../providers/groups-provider';
 import { LoadingProvider } from '../../../providers/loading-provider';
 import { LoginProvider } from '../../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
 import { StateProvider } from '../../../providers/state-provider';
-import { GroupsProvider } from '../../../providers/groups-provider';
-import { IEvent, ILocal } from '../../../interfaces/events';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -38,12 +39,17 @@ export class EventosDetalhePage implements OnInit {
     this.loadingProvider.hide();
 		this.route.queryParams.subscribe(params => {
       this.event.urlname = params['urlname'];
+      this.event.id = params['nextEvent'];
     });
 
-    this.groupsProvider.getByUrlName(this.event.urlname).subscribe(event => {
-      // console.dir(this.event);
+    this.groupsProvider.getByUrlName(this.event.urlname, this.event.id).subscribe(event => {
       this.event = event;
+      this.event.description = this.stripHTML(this.event.description);
     })
+  }
+
+  stripHTML(html) {
+    return html.replace(/<.*?>/g, '');
   }
 
   onBackTap() {

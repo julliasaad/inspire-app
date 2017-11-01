@@ -6,8 +6,8 @@ import { IGroup } from '../../interfaces/events';
 import { LoadingProvider } from '../../providers/loading-provider';
 import { LoginProvider } from '../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { StateProvider } from '../../providers/state-provider';
 import { Router } from '../../providers/router-provider';
+import { StateProvider } from '../../providers/state-provider';
 
 @Component({
   moduleId: module.id,
@@ -33,21 +33,25 @@ export class EventosPage implements OnInit {
   ) {
     this.groupsProvider.listGroups().subscribe(grupos => {
       this.grupos = grupos;
-      console.dir(this.grupos);
+      this.grupos.forEach(g => {
+        g.description = this.stripHTML(g.description);
+      });
     });
   }
 
   onEventoTap(grupo) {
-    this.router.navigate(`/eventos/detalhe?urlname=${grupo.urlname}`);
+    this.router.navigate(`/eventos/detalhe?urlname=${grupo.urlname}&nextEvent=${grupo.next_event}`);
   }
 
   ngOnInit() {
     this.loadingProvider.hide();
   }
 
+  stripHTML(html) {
+    return html.replace(/<.*?>/g, '');
+  }
+
   onBackTap() {
-    // this.hideKeyboard();
     this.routerExtensions.back();
   } 
-  
 }

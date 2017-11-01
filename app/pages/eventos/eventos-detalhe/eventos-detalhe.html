@@ -1,44 +1,16 @@
 <ActionBar>
     <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
     <StackLayout orientation="horizontal" android:horizontalAlignment="center">
-        <Label text="Eventos" horizontalAlignment="center"></Label>
+        <Label text="Evento" horizontalAlignment="center"></Label>
     </StackLayout>
 </ActionBar>
 <GridLayout class="eventos-detalhe-page" columns="*" rows="auto, auto, auto, auto">
-    <StackLayout col="1" row="0" orientation="vertical">
-        <Image src="https://secure.meetupstatic.com/photos/event/7/d/5/f/highres_459452095.jpeg"></Image>        
-        <Label [text]="event.name" class="title-group" horizontalAlignment="center" marginTop="-20"></Label>        
-        <Label [text]="event.description" [textWrap]="true"></Label>        
+    <Label width="100%" col="0" row="0" [text]="event.name" class="title-group" horizontalAlignment="center" [textWrap]="true"></Label>        
+    <StackLayout col="0" row="1" orientation="vertical" padding="15">
+        <!--<Image [src]="event.photo"></Image>        -->
+        <Label [text]="event.description" [textWrap]="true"></Label>  
+        <Label class="group-description"  fontSize="18" text="Onde?" [textWrap]="true" style="color: #db1479"></Label>
+        <Label class="group-description" text="{{ event.local.name }}" [textWrap]="true"></Label>
+        <Label class="group-description" text="{{ event.local.address_1 }}" [textWrap]="true"></Label>        
     </StackLayout>
-    <!-- <StackLayout col="1" row="2" orientation="vertical" marginLeft="10">
-        <Label text="Cursos oferecidos" class="title"></Label>
-
-        <StackLayout class="card" orientation="horizontal">
-            <StackLayout class="card-border"></StackLayout>
-            <Label class="card-title" text="#3 Meetup SorocabaCSS" (tap)="onCursoTap()" verticalAlignment="center" [textWrap]="true"></Label>
-        </StackLayout>
-
-        <StackLayout class="card" orientation="horizontal">
-            <StackLayout class="card-border"></StackLayout>
-            <Label class="card-title" text="#2 Meetup SorocabaCSS" (tap)="onCursoTap()" verticalAlignment="center" [textWrap]="true"></Label>
-        </StackLayout> 
-
-        <StackLayout class="card" orientation="horizontal">
-            <StackLayout class="card-border"></StackLayout>
-            <Label class="card-title" text="#1 Meetup SorocabaCSS" (tap)="onCursoTap()" verticalAlignment="center" [textWrap]="true"></Label>
-        </StackLayout>
-    </StackLayout> -->
-    <ListView [items]="data.eventos" col="0" row="0">
-        <ng-template let-item="item">
-            <StackLayout>
-                <GridLayout class="list-item" columns="auto, *" rows="auto">
-                    <Image col="0" row="0" marginRight="10" marginLeft="10" src="https://pbs.twimg.com/profile_images/826548428385681408/13n_r40Y_400x400.jpg" height="50"></Image>
-                    <StackLayout col="1" row="0" orientation="vertical">
-                        <Label class="group-title" text="{{ item.name }}"></Label>
-                        <Label class="group-description" text="{{ item.description }}" [textWrap]="true"></Label>            
-                    </StackLayout>
-                </GridLayout>
-            </StackLayout>
-        </ng-template>
-    </ListView>
 </GridLayout>
