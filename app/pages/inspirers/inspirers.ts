@@ -1,12 +1,13 @@
 import { Component, OnInit } from "@angular/core";
+import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
+
+import { IUser } from '../../interfaces/user';
 import { LoadingProvider } from '../../providers/loading-provider';
 import { LoginProvider } from '../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
-import { StateProvider } from '../../providers/state-provider';
-import { IUser } from '../../interfaces/user';
-import { UserProvider } from '../../providers/user-provider';
 import { Router } from '../../providers/router-provider';
+import { StateProvider } from '../../providers/state-provider';
+import { UserProvider } from '../../providers/user-provider';
 
 @Component({
   moduleId: module.id,
@@ -28,7 +29,8 @@ export class InspirersPage implements OnInit {
     
   ) {
     this.userProvider.list().subscribe(users => {
-      this.users = users;
+      this.users = users.filter((u) => u.type == "inspirer");
+      console.dir(this.users);      
     });
   }
 

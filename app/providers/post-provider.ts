@@ -34,6 +34,7 @@ export class PostProvider {
 					author: post.author,
 					title: post.title,
 					content: post.content,
+					image: post.image
 				};
 			});
 			return Observable.of(data);
@@ -63,6 +64,7 @@ export class PostProvider {
 				author: result.author,
 				title: result.title,
 				content: result.content,
+				image: result.image
 			};
 			return Observable.of(data);
 		});

@@ -1,11 +1,12 @@
 import { Component, OnInit } from "@angular/core";
+import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
+
+import { ActivatedRoute } from '@angular/router';
+import { IPost } from '../../../interfaces/post';
 import { LoadingProvider } from '../../../providers/loading-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
-import { StateProvider } from '../../../providers/state-provider';
 import { PostProvider } from '../../../providers/post-provider';
-import { IPost } from '../../../interfaces/post';
-import { ActivatedRoute } from '@angular/router';
+import { StateProvider } from '../../../providers/state-provider';
 
 @Component({
   moduleId: module.id,
@@ -47,4 +48,5 @@ export class PostDetalhePage implements OnInit {
   onBackTap() {
     this.routerExtensions.back();
   }
+  
 }

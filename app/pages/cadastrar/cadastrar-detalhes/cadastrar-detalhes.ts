@@ -27,11 +27,8 @@ export class CadastrarDetalhesPage implements OnInit {
   private doubt: boolean;
 
 	public user: IUser = {
-    name: null,
-    email: null,
-    type: null,
-    biography: null,
-    id: null
+    id: null,
+    type: null
   }
 
   constructor(
@@ -58,25 +55,33 @@ export class CadastrarDetalhesPage implements OnInit {
   onEnviarTap() {
     this.loadingProvider.show("Analisando...");
     if(this.experience && !this.doubt) {
-			this.user.type = 'inspirer';
-      this.loadingProvider.hide();
-      this.router.navigate(`/cadastrar/detalhes/biografia?user=${this.user.id}&type=${this.user.type}`);
+      this.user = {
+        id: this.user.id,
+        type: "inspirer",
+      };
+      this.userProvider.create(this.user).subscribe(u => {
+        this.loadingProvider.hide();      
+      });
     } else {
-			this.loadingProvider.hide();
-			dialogs.confirm({
-				title: "Aqui você pode se inspirar!",
-				message: "Vamos começar?!",
-				okButtonText: "ok",
-			}).then(function (result) {
-				if(result) {
-					this.routerExtensions.navigate([`/login/`]);
-				}
-			});
+      this.user = {
+        id: this.user.id,
+        type: "inspired",
+      };
+      this.userProvider.create(this.user).subscribe(u => {
+        this.loadingProvider.hide();
+      });
     }
+    this.feedback.success({
+      title: "",
+      message: "Informações cadastradas com sucesso!",
+      duration: 1000
+    });
+    this.routerExtensions.navigate([`/login/`]);
   }
 
   onBackTap() {
     // this.hideKeyboard();
     this.routerExtensions.back();
   }
+  
 }

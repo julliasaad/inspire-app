@@ -1,7 +1,8 @@
 /* generic */
 
 Label,
-TextField {
+TextField,
+TextView {
     font-family: 'Montserrat-Light', sans-serif;
     color: #666;
 }

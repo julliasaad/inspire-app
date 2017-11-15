@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
+
 import { LoadingProvider } from '../../providers/loading-provider';
 import { LoginProvider } from '../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
 import { StateProvider } from '../../providers/state-provider';
 
 @Component({
@@ -37,4 +38,5 @@ export class AdministrativoPage implements OnInit {
     // this.hideKeyboard();
     this.routerExtensions.back();
   }
+  
 }

@@ -7,7 +7,8 @@
 <ScrollView>
   <GridLayout class="posts-detalhe-page" columns="*" rows="auto, auto">
     <StackLayout col="1" row="0" orientation="vertical">
-      <Label [text]="post.title" class="title-group" horizontalAlignment="center" marginTop="0" textWrap="true" width="100%"></Label>        
+       <Image [src]="post.image" width="100%"></Image>     
+      <Label [text]="post.title" class="title-group" horizontalAlignment="center" marginTop="-10" textWrap="true" width="100%"></Label>        
     </StackLayout>
     <StackLayout col="1" row="1" orientation="vertical" marginLeft="10" marginBottom="15" padding="15">
       <Label [text]="post.author" class="title"></Label>

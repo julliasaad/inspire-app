@@ -2,7 +2,7 @@
     background-color: #F5F5F5;
 }
 
-.cadastrar-page TextField {
+.cadastrar-page TextField, .cadastrar-page TextView {
     margin: 10 auto;
     padding: 10 20;
     width: 90%;

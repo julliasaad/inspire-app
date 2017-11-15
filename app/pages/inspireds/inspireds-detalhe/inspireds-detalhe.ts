@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
+import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
+
+import { ActivatedRoute } from '@angular/router';
+import { IUser } from '../../../interfaces/user';
 import { LoadingProvider } from '../../../providers/loading-provider';
 import { LoginProvider } from '../../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
 import { StateProvider } from '../../../providers/state-provider';
-import { ActivatedRoute } from '@angular/router';
 import { UserProvider } from '../../../providers/user-provider';
-import { IUser } from '../../../interfaces/user';
-
 
 @Component({
   moduleId: module.id,

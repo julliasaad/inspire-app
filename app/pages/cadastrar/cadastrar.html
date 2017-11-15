@@ -13,6 +13,8 @@
             <!--<TextField id="userNameInput" [(ngModel)]="username" hint="Nome de usuária"></TextField>-->
             <TextField id="emailInput" [(ngModel)]="user.email" hint="Email"></TextField>
             <TextField id="passwordInput" [(ngModel)]="user.password" hint="Senha" secure="true" returnKeyType="done"></TextField>
+            <TextView id="biography" [(ngModel)]="user.biography" hint="Escreva aqui sua biografia" height="80" textWrap="true"></TextView>
+            <TextField id="photoInput" [(ngModel)]="user.photo" hint="URL de uma foto"></TextField>
             <Button text="Cadastrar" (tap)="onCadastrarTap()"></Button>
         </StackLayout>
     </StackLayout>

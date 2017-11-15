@@ -26,11 +26,9 @@ export class BiographyPage implements OnInit {
   private doubt: boolean;
 
 	public user: IUser = {
-    name: null,
-    email: null,
+    id: null,
     type: null,
     biography: null,
-    id: null
   }
 
   public userUpdated: IUser = {
@@ -41,13 +39,16 @@ export class BiographyPage implements OnInit {
     id: null
   }
 
+  public bio: string;
+  
   constructor(
     private loadingProvider: LoadingProvider,
     private routerExtensions: RouterExtensions,
     private stateProvider: StateProvider,
     private loginProvider: LoginProvider,
     private userProvider: UserProvider,
-		private route: ActivatedRoute,
+    private route: ActivatedRoute,
+    
   ) {
     this.feedback = new Feedback();
   }
@@ -56,22 +57,27 @@ export class BiographyPage implements OnInit {
     this.loadingProvider.hide();
 		this.route.queryParams.subscribe(params => {
       this.user.id = params['user'];
-			this.userProvider.getById(this.user.id).subscribe(u => {
-        this.user = u;
-        this.user.type = params['type'];
-        console.dir(this.user);
-      })
+      this.user.type = params['type'];
     });
   }
 
   onEnviarTap() {
     this.loadingProvider.show("Analisando...");
-    console.dir(this.user);
-    // this.userProvider.create(this.user).subscribe(u => {
-    //   this.userUpdated = u;
-    //   this.loadingProvider.hide();
-    //   console.dir(this.userUpdated);
-    // });
+    this.user = {
+      id: this.user.id,
+      type: "inspirer",
+      biography: this.bio 
+    };
+    this.userProvider.create(this.user).subscribe(u => {
+      this.userUpdated = u;
+      this.loadingProvider.hide();
+      this.feedback.success({
+        title: "",
+        message: "Informações cadastradas com sucesso!",
+        duration: 1000
+      });
+      this.routerExtensions.navigate([`/login/`]);
+    });
   }
 
   onBackTap() {

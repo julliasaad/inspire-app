@@ -9,7 +9,7 @@
     <Label col="0" row="0" text="Compartilhando sua biografia, você pode ajudar outras mulheres a se inspirarem!" fontSize="22" verticalAlignment="center" textWrap="true"></Label>
     <StackLayout col="0" row="1">
         <StackLayout>
-            <TextView id="biography" [(ngModel)]="user.biography" hint="Escreva aqui sua biografia" height="100" textWrap="true"></TextView>
+            <TextView id="biography" [(ngModel)]="bio" hint="Escreva aqui sua biografia" height="100" textWrap="true"></TextView>
         </StackLayout>
     </StackLayout>
     <Button col="0" row="2" text="Enviar" (tap)="onEnviarTap()"></Button>  

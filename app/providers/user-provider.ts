@@ -29,7 +29,8 @@ export class UserProvider {
           id: user._id,
           name: user.name,
           type: user.type,
-          biography: user.biography
+					biography: user.biography,
+					photo: user.photo
 				};
 			});
 			return Observable.of(data);
@@ -37,8 +38,19 @@ export class UserProvider {
 	}
 
   create(user: IUser): Observable<IUser> {
-    let url = `https://quiet-dawn-28527.herokuapp.com/api/user`;
-    return this.http.post(url, user)
+		let url = `https://quiet-dawn-28527.herokuapp.com/api/user`;
+		console.dir(user);
+		let userToSend;
+		if(user.id) {
+			userToSend = {
+				_id: user.id,
+				type: user.type,
+				biography: user.biography
+			}
+		} else {
+			userToSend = user;
+		}
+    return this.http.post(url, userToSend)
       .switchMap(r => {
 				const result = r.json();
 				if (result.erro) {
@@ -49,7 +61,8 @@ export class UserProvider {
 					name: result.name,
 					email: result.email,
 					biography: result.biography,
-					type: result.type
+					type: result.type,
+					photo: result.photo
 				};
         return Observable.of(data);
     	});
@@ -69,6 +82,7 @@ export class UserProvider {
 				biography: result.biography,
 				email: result.email,
 				type: result.type,
+				photo: result.photo
 			};
 			return Observable.of(data);
 		});

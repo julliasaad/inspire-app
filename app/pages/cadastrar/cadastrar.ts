@@ -27,7 +27,9 @@ export class CadastrarPage implements OnInit {
     id: null,
     name: null,
     email: null,
-    password: null
+    password: null,
+    biography: null,
+    photo: null,
   }
 
   public userCreated: IUser = {
@@ -36,7 +38,8 @@ export class CadastrarPage implements OnInit {
       email: null,
       password: null,
       biography: null,
-      type: null
+      type: null,
+      photo: null,
     }
 
   constructor(
@@ -48,7 +51,6 @@ export class CadastrarPage implements OnInit {
     private router: Router,
   ) {
     this.feedback = new Feedback();
-
   }
 
   ngOnInit() {
@@ -71,16 +73,16 @@ export class CadastrarPage implements OnInit {
         title: "Continuar cadastro",
         message: "Para melhor uso do app, sugerimos que você faça o cadastro completo. Deseja prosseguir com o cadastro?",
         okButtonText: "Sim",
-        cancelButtonText: "Não",
+        neutralButtonText: "Não",
       }).then(result => {
         if(result) {
+          console.dir(result);
           this.router.navigate(`/cadastrar/detalhes?user=${u.id}&email=${u.email}`);
         } else {
           this.routerExtensions.navigate([`/login/`]);
         }
       });
     });
-    
   }
 
   onBackTap() {
