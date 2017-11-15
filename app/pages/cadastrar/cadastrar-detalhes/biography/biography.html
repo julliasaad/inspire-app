@@ -1,0 +1,16 @@
+<ActionBar>
+    <NavigationButton (tap)="onBackTap()" android:icon="res://ic_back_black"></NavigationButton>
+    <StackLayout orientation="horizontal" android:horizontalAlignment="center">
+        <!-- <Image src="res://logo" height="30" horizontalAlignment="center"></Image> -->
+        <Label text="Enviar biografia" class="action-label" horizontalAlignment="center"></Label>
+    </StackLayout>
+  </ActionBar>
+  <GridLayout class="cadastrar-page" columns="*" rows="auto, auto, auto, auto" margin="15">
+    <Label col="0" row="0" text="Compartilhando sua biografia, você pode ajudar outras mulheres a se inspirarem!" fontSize="22" verticalAlignment="center" textWrap="true"></Label>
+    <StackLayout col="0" row="1">
+        <StackLayout>
+            <TextView id="biography" [(ngModel)]="user.biography" hint="Escreva aqui sua biografia" height="100" textWrap="true"></TextView>
+        </StackLayout>
+    </StackLayout>
+    <Button col="0" row="2" text="Enviar" (tap)="onEnviarTap()"></Button>  
+  </GridLayout>

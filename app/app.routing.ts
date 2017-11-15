@@ -2,6 +2,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { AddPostPage } from './pages/administrativo/add-post/add-post';
 import { AdministrativoPage } from './pages/administrativo/administrativo';
+import { BiographyPage } from './pages/cadastrar/cadastrar-detalhes/biography/biography';
 import { CadastrarDetalhesPage } from './pages/cadastrar/cadastrar-detalhes/cadastrar-detalhes';
 import { CadastrarPage } from './pages/cadastrar/cadastrar';
 import { CursosDetalhePage } from './pages/cursos/cursos-detalhe/cursos-detalhe';
@@ -23,6 +24,8 @@ export const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'cadastrar', component: CadastrarPage },
   { path: 'cadastrar/detalhes', component: CadastrarDetalhesPage },
+  { path: 'cadastrar/detalhes/biografia', component: BiographyPage },
+  
   
   { path: 'login', component: LoginPage },
   { path: 'dashboard', component: DashboardPage },

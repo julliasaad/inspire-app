@@ -3,30 +3,37 @@ import { PageRoute, RouterExtensions } from 'nativescript-angular/router';
 
 import { ActivatedRoute } from '@angular/router';
 import { Feedback } from "nativescript-feedback";
-import { IUser } from '../../../interfaces/user';
-import { LoadingProvider } from '../../../providers/loading-provider';
-import { LoginProvider } from '../../../providers/login-provider';
+import { IUser } from '../../../../interfaces/user';
+import { LoadingProvider } from '../../../../providers/loading-provider';
+import { LoginProvider } from '../../../../providers/login-provider';
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { Router } from '../../../providers/router-provider';
-import { StateProvider } from '../../../providers/state-provider';
-import { UserProvider } from '../../../providers/user-provider';
+import { StateProvider } from '../../../../providers/state-provider';
+import { UserProvider } from '../../../../providers/user-provider';
 
 import dialogs = require("ui/dialogs");
 
 @Component({
   moduleId: module.id,
-  selector: "cadastrar-page",
-  styleUrls: ['./cadastrar-detalhes.css'],
-  templateUrl: './cadastrar-detalhes.html',
+  selector: "biography-page",
+  styleUrls: ['./biography.css'],
+  templateUrl: './biography.html',
   providers: []
 })
 
-export class CadastrarDetalhesPage implements OnInit {
+export class BiographyPage implements OnInit {
   private feedback: Feedback;
   private experience: boolean;
   private doubt: boolean;
 
 	public user: IUser = {
+    name: null,
+    email: null,
+    type: null,
+    biography: null,
+    id: null
+  }
+
+  public userUpdated: IUser = {
     name: null,
     email: null,
     type: null,
@@ -40,9 +47,7 @@ export class CadastrarDetalhesPage implements OnInit {
     private stateProvider: StateProvider,
     private loginProvider: LoginProvider,
     private userProvider: UserProvider,
-    private route: ActivatedRoute,
-    private router: Router,
-    
+		private route: ActivatedRoute,
   ) {
     this.feedback = new Feedback();
   }
@@ -51,28 +56,22 @@ export class CadastrarDetalhesPage implements OnInit {
     this.loadingProvider.hide();
 		this.route.queryParams.subscribe(params => {
       this.user.id = params['user'];
-      this.user.email = params['email'];
+			this.userProvider.getById(this.user.id).subscribe(u => {
+        this.user = u;
+        this.user.type = params['type'];
+        console.dir(this.user);
+      })
     });
   }
 
   onEnviarTap() {
     this.loadingProvider.show("Analisando...");
-    if(this.experience && !this.doubt) {
-			this.user.type = 'inspirer';
-      this.loadingProvider.hide();
-      this.router.navigate(`/cadastrar/detalhes/biografia?user=${this.user.id}&type=${this.user.type}`);
-    } else {
-			this.loadingProvider.hide();
-			dialogs.confirm({
-				title: "Aqui você pode se inspirar!",
-				message: "Vamos começar?!",
-				okButtonText: "ok",
-			}).then(function (result) {
-				if(result) {
-					this.routerExtensions.navigate([`/login/`]);
-				}
-			});
-    }
+    console.dir(this.user);
+    // this.userProvider.create(this.user).subscribe(u => {
+    //   this.userUpdated = u;
+    //   this.loadingProvider.hide();
+    //   console.dir(this.userUpdated);
+    // });
   }
 
   onBackTap() {

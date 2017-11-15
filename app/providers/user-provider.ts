@@ -37,12 +37,21 @@ export class UserProvider {
 	}
 
   create(user: IUser): Observable<IUser> {
-    console.log("entrei no create");
     let url = `https://quiet-dawn-28527.herokuapp.com/api/user`;
     return this.http.post(url, user)
       .switchMap(r => {
-        const result = r.json();
-        return Observable.of(result);
+				const result = r.json();
+				if (result.erro) {
+					throw new Error();
+				}
+				const data: IUser = {
+					id: result._id,
+					name: result.name,
+					email: result.email,
+					biography: result.biography,
+					type: result.type
+				};
+        return Observable.of(data);
     	});
   }
 
@@ -55,9 +64,11 @@ export class UserProvider {
 				throw new Error();
 			}
 			const data: IUser = {
-        id: result.id,
+        id: result._id,
         name: result.name,
-        biography: result.biography
+				biography: result.biography,
+				email: result.email,
+				type: result.type,
 			};
 			return Observable.of(data);
 		});

@@ -6,6 +6,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AddPostPage } from './pages/administrativo/add-post/add-post';
 import { AdministrativoPage } from './pages/administrativo/administrativo';
 import { AppComponent } from "./app.component";
+import { BiographyPage } from './pages/cadastrar/cadastrar-detalhes/biography/biography';
 import { CacheFactory } from 'cachefactory';
 import { CacheProvider } from './providers/cache-provider';
 import { CadastrarDetalhesPage } from './pages/cadastrar/cadastrar-detalhes/cadastrar-detalhes';
@@ -47,10 +48,12 @@ import { httpFactory } from "./interceptor/http-factory";
     AppComponent,
     AddPostPage,
     AdministrativoPage,
+    BiographyPage,
     CadastrarPage,
     CadastrarDetalhesPage,
     CursosPage,
     CursosDetalhePage,
+    DashboardPage,
     EventosPage,
     EventosDetalhePage,
     InspireMePage,
@@ -58,11 +61,10 @@ import { httpFactory } from "./interceptor/http-factory";
     InspirersDetalhePage,
     InspiredsPage,
     InspiredsDetalhePage,
-    VideosPage,
+    LoginPage,
     PalletTime,
     PostDetalhePage,
-    LoginPage,
-    DashboardPage,
+    VideosPage,
     WebviewCursoPage
   ],
   bootstrap: [AppComponent],

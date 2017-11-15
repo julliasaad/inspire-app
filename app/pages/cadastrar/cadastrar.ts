@@ -34,7 +34,9 @@ export class CadastrarPage implements OnInit {
       id: null,
       name: null,
       email: null,
-      password: null
+      password: null,
+      biography: null,
+      type: null
     }
 
   constructor(
@@ -72,8 +74,7 @@ export class CadastrarPage implements OnInit {
         cancelButtonText: "Não",
       }).then(result => {
         if(result) {
-          this.router.navigate(`/cadastrar/detalhes?user=${this.userCreated.email}`);
-
+          this.router.navigate(`/cadastrar/detalhes?user=${u.id}&email=${u.email}`);
         } else {
           this.routerExtensions.navigate([`/login/`]);
         }

@@ -44,7 +44,7 @@ export class PostProvider {
     let url = `https://quiet-dawn-28527.herokuapp.com/api/post`;
     return this.http.post(url, post)
       .switchMap(r => {
-				const result = r.json();
+		const result = r.json();
         console.dir(result);
         return Observable.of(result);
     	});
